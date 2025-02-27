@@ -1,7 +1,5 @@
 airflow
 logs/*
-data_source/*
-data_output/*
 venv
 venv/*
 .env
