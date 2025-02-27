@@ -2,11 +2,11 @@
 
 This project automates the daily production report update of a paper company by consolidating data from multiple Excel files into a single CSV file, by leveraging Python libraries and scheduling tools. 
 
-# Overview
+# Overview ✨:
 
 This project is a repplication of an improvement I did in a company data process. The daily routine involved gathering production data (production per line, raw material usage, machine breaks, etc.) from many separate Excel files every morning. With the leadership meeting scheduled at 8:20 AM and data available by 8:00 AM, the manual ETL process was often too slow, resulting in delayed reports. This project was initiated to automate the data consolidation and processing, ensuring the report is always delivered on time.
 
-# Features
+# Features ⚙️:
 
 - Automated Data Extraction: Uses Python to read and consolidate data from multiple Excel files.
 - Data Transformation: Applies necessary filters and transformations using Pandas.
@@ -14,7 +14,7 @@ This project is a repplication of an improvement I did in a company data process
 - Scheduling: Configured with Airflow to ensure the ETL process runs reliably in the desired period.
 - Performance Improvement: Reduces the ETL process runtime substancially in comparison with the same process done manually, and also, improve data quality and reliability.
 
-# Technologies
+# Technologies 💻:
 
 - Python: Core programming language.
 - Pandas: Data manipulation and transformation (Python library).
@@ -22,7 +22,7 @@ This project is a repplication of an improvement I did in a company data process
 - Faker: Generate fake data (Python library).
 - Airflow: Workflow orchestration and scheduling.
 
-# Installation
+# Installation 📦:
 
 ## 1 - Clone the repository:
 
@@ -59,7 +59,7 @@ After the download, just double click the installer and proceed with installatio
 sudo pacman -S docker-compose
 ```
 
-# Usage
+# Usage 🙂:
 
 In the project directory, initialize the Airflow container with the command below:
 
