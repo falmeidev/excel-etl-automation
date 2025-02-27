@@ -1,0 +1,9 @@
+airflow
+logs/*
+data_source/*
+data_output/*
+venv
+venv/*
+.env
+dags/__pycache__
+scripts/__pycache__
