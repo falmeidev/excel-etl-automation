@@ -7,7 +7,7 @@ def run_etl():
 
     consolidated_data = pd.merge(production, materials, on=["date","line"])
     consolidated_data = pd.merge(consolidated_data, downtime, on=["date","line"])
-    consolidated_data.to_csv("./data_output/consolidated_data.xlsx")
+    consolidated_data.to_csv("./data_output/consolidated_data.csv")
 
 if __name__ == "__main__":
     run_etl()
