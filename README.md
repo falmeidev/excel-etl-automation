@@ -45,7 +45,7 @@ After the download, just double click the installer and proceed with installatio
 sudo pacman -S docker
 ```
 
-## 2 - Install Docker Compose (if you already have, SKIP THIS STEP)
+## 3 - Install Docker Compose (if you already have, SKIP THIS STEP)
 
 Access the link and download the installer according with your OS.
 
@@ -59,7 +59,53 @@ After the download, just double click the installer and proceed with installatio
 sudo pacman -S docker-compose
 ```
 
+## 4 - Create the .env file with your user info to run Airflow 
+
+To run the containers, it is necessary to determine the user that has access to the containers's docs. To do this, it is necessary to create a .env file with the user info. To do this, it's only necessary to RUN the code below on the project directory.
+
+``` bash
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+```
+
+## 5 - Create the folders that airflow will use to store LOGS and save PLUGINS
+
+To create the 2 needed folders, it is only necessary to run the code below.
+
+``` bash
+mkdir logs plugins
+```
+
+## 6 - Start the Docker Service
+
+If you run a Docker command without start the service, you will get the message below:
+
+``` Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon runnig? ```
+
+To solve this, it is necessary to start the service by running the code:
+
+``` bash
+systemctl start docker
+```
+
+After that, docker service will start.
+
+If the are commands that you can't do without sudo (will be shown "permission denied"), it is only necessary to ran the code below. This code will add your user to the docker group.
+
+``` bash
+sudo usermode -aG docker $USER
+```
+
+After this, just restart the computer and the 'sudo' command should not be needed to run docker commands anymore.
+
+***Obs**: Case the problem persists, try to restart the docker, by using ```sudo systemctl restart docker```* 
+
 # Usage 🙂
+
+In the project directory, create the docker image that you will use:
+
+``` bash
+docker build . --tag extending_airflow:latest
+```
 
 In the project directory, initialize the Airflow container with the command below:
 
